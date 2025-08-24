@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FlightAura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="site-header sticky-header">
+        <div class="top-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 top-space">
+                        <div class="toll-number">
+                            <a href="tel:+91-09876-54321">Toll Number : +91-09876-54321</a>
+                        </div>
+                    </div>
+                    <div class="col-md-9  top-space">
+                        <div class="header-right">
+                            <div class="social">
+                                <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                            <div class="lang-currency">
+                                <select>
+                                    <option>ENG</option>
+                                </select>
+                                <select>
+                                    <option>USD</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="FlightAura Logo">
+            </div>
+
+            <!-- Nav Menu -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">Flight</a></li>
+
+                    <!-- Cancellation Policy with Dropdown -->
+                    <li class="has-dropdown">
+                        <a href="#">Cancellation Policy <i class="fa-solid fa-chevron-down"></i> </a>
+                        <ul class="dropdown">
+                            <li><a href="#">Domestic Cancellation</a></li>
+                            <li><a href="#">International Cancellation</a></li>
+                            <li><a href="#">Refund Process</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">Flight Change</a></li>
+                    <li><a href="#">Name Change</a></li>
+
+                    <!-- Seat Change with Dropdown -->
+                    <li class="has-dropdown">
+                        <a href="#">Seat Change <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#">Economy Seat Change</a></li>
+                            <li><a href="#">Business Class Seat Change</a></li>
+                            <li><a href="#">Premium Upgrade</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">Pet Policy</a></li>
+                </ul>
+            </nav>
+
+
+            <!-- Right Section -->
+            <button class="hamburger" id="menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-btn" id="close-menu">✖</button>
+        <ul>
+            <li><a href="#">Flight</a></li>
+            <li><a href="#">Cancellation Policy</a></li>
+            <li><a href="#">Flight Change</a></li>
+            <li><a href="#">Name Change</a></li>
+            <li><a href="#">Seat Change</a></li>
+            <li><a href="#">Pet Policy</a></li>
+        </ul>
+    </div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero-banner">
+
+        <div class="hero-content">
+            <p class="tagline">Board a Flight with FlightAura & Fly High within the clouds</p>
+            <h1>Search, Compare & Book Cheap Flights <br> on Over 500+ Airlines</h1>
+        </div>
+        <div class="banner-overlay">
+
+            <div class="fight-from">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                            aria-selected="true"><span class="icon-areo"><img
+                                    src="assets/images/flight-btn.svg"></span>Flight</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                            aria-selected="false"><span class="icon-areo"><img
+                                    src="assets/images/policy.svg"></span>Airline
+                            Policy</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                            aria-selected="false"><span class="icon-areo"><img
+                                    src="assets/images/flight-details.svg"></span>Flight
+                            Deals</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <div class="Flight-from">
+                            <form class="row g-3">
+                                <!-- Flying From -->
+                                <div class="col-md-6 input-icon">
+                                    <img src="assets/images/plane-departure.svg" class="input-img">
+                                    <input type="text" class="form-control" placeholder="Flying From">
+                                </div>
+
+                                <!-- Flying To -->
+                                <div class="col-md-6 input-icon">
+                                    <img src="assets/images/location.svg" class="input-img">
+                                    <input type="text" class="form-control" placeholder="Flying To">
+                                </div>
+
+                                <!-- Departure Date -->
+                                <div class="col-md-6 input-icon">
+                                    <img src="assets/images/calendar.svg" class="input-img">
+                                    <input type="date" class="form-control" placeholder="Departure">
+                                </div>
+
+                                <!-- Return Date -->
+                                <div class="col-md-6 input-icon">
+                                    <img src="assets/images/calendar.svg" class="input-img">
+                                    <input type="date" class="form-control" placeholder="Return Date">
+                                </div>
+
+                                <!-- Adult -->
+                                <div class="col-md-4 select-icon">
+                                    <img src="assets/images/user.svg" class="select-img">
+                                    <select class="form-select">
+                                        <option selected>Adult</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </div>
+
+                                <!-- Child -->
+                                <div class="col-md-4 select-icon">
+                                    <img src="assets/images/child.svg" class="select-img">
+                                    <select class="form-select">
+                                        <option selected>Child</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </div>
+
+                                <!-- Class -->
+                                <div class="col-md-4 select-icon">
+                                    <img src="assets/images/seat.svg" class="select-img">
+                                    <select class="form-select">
+                                        <option selected>Class</option>
+                                        <option>Business</option>
+                                        <option>Economy</option>
+                                    </select>
+                                </div>
+
+                                <!-- Button -->
+                                <div class="col-md-12">
+                                    <button class="btn-search">
+                                        <span class="icon-areo">
+                                            <img src="assets/images/search-flight.svg">
+                                        </span>
+                                        Search Flight
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="Flight-from">
+                            <form class="row g-3">
+                                <!-- Flying From -->
+                                <div class="col-md-6 input-icon">
+                                    <img src="assets/images/plane-departure.svg" class="input-img">
+                                    <input type="text" class="form-control" placeholder="Flying From">
+                                </div>
+
+                                <!-- Flying To -->
+                                <div class="col-md-6 input-icon">
+                                    <img src="assets/images/location.svg" class="input-img">
+                                    <input type="text" class="form-control" placeholder="Flying To">
+                                </div>
+
+
+                                <!-- Adult -->
+                                <div class="col-md-6 select-icon">
+                                    <img src="assets/images/user.svg" class="select-img">
+                                    <select class="form-select">
+                                        <option selected>POLICY</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </div>
+
+                                <!-- Child -->
+                                <div class="col-md-6 select-icon">
+                                    <img src="assets/images/child.svg" class="select-img">
+                                    <select class="form-select">
+                                        <option selected>POLICY</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </div>
+
+
+                                <!-- Button -->
+                                <div class="col-md-12">
+                                    <button class="btn-search">
+                                        <span class="icon-areo">
+                                            <img src="assets/images/search-flight.svg">
+                                        </span>
+                                        Search Flight
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        <div class="Flight-from">
+                            <form class="row g-3">
+                                <!-- Flying From -->
+                                <div class="col-md-6 input-icon">
+                                    <img src="assets/images/plane-departure.svg" class="input-img">
+                                    <input type="text" class="form-control" placeholder="Flying From">
+                                </div>
+
+                                <!-- Flying To -->
+                                <div class="col-md-6 input-icon">
+                                    <img src="assets/images/location.svg" class="input-img">
+                                    <input type="text" class="form-control" placeholder="Flying To">
+                                </div>
+
+                                <!-- Departure Date -->
+                                <div class="col-md-6 input-icon">
+                                    <img src="assets/images/calendar.svg" class="input-img">
+                                    <input type="date" class="form-control" placeholder="Departure">
+                                </div>
+
+                                <!-- Return Date -->
+                                <div class="col-md-6 input-icon">
+                                    <img src="assets/images/calendar.svg" class="input-img">
+                                    <input type="date" class="form-control" placeholder="Return Date">
+                                </div>
+
+                                <!-- Adult -->
+                                <div class="col-md-4 select-icon">
+                                    <img src="assets/images/user.svg" class="select-img">
+                                    <select class="form-select">
+                                        <option selected>Adult</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </div>
+
+                                <!-- Child -->
+                                <div class="col-md-4 select-icon">
+                                    <img src="assets/images/child.svg" class="select-img">
+                                    <select class="form-select">
+                                        <option selected>Child</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </div>
+
+                                <!-- Class -->
+                                <div class="col-md-4 select-icon">
+                                    <img src="assets/images/seat.svg" class="select-img">
+                                    <select class="form-select">
+                                        <option selected>Class</option>
+                                        <option>Business</option>
+                                        <option>Economy</option>
+                                    </select>
+                                </div>
+
+                                <!-- Button -->
+                                <div class="col-md-12">
+                                    <button class="btn-search">
+                                        <span class="icon-areo">
+                                            <img src="assets/images/search-flight.svg">
+                                        </span>
+                                        Search Flight
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="phone"><a href="tel:(833) 432-0987"><i class="fa-solid fa-phone"></i> (833) 432-0987</a></button>
+    </section>
+    <!-- ===== FEATURED SECTION ===== -->
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <p class="section-subtitle">Featured</p>
+            <h2 class="section-title"> Our Trendy Blogs</h2>
+            <p class="section-desc">
+                Stay familiar with all the prime spots to visit in every corner of the World with our blogs.
+                Flightaura is Paradise for all travel enthusiasts.
+            </p>
+
+            <!-- Slick Slider -->
+            <div class="blog-slider">
+                <!-- Blog Card 1 -->
+                <div class="blog-card">
+                    <img src="assets/images/featured.png" alt="Blog 1">
+                    <p class="date">September 4, 2024</p>
+                    <h3 class="blog-title">Expedia Name Change Policy</h3>
+                    <p class="blog-text">Looking for a name change on Expedia flight tickets? The Expedia name change
+                        policy
+                        can help you do so.</p>
+                    <a href="#" class="btn-read">Read More</a>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="blog-card">
+                    <img src="assets/images/featured.png" alt="Blog 2">
+                    <p class="date">September 4, 2024</p>
+                    <h3 class="blog-title">Expedia Name Change Policy</h3>
+                    <p class="blog-text">Looking for a name change on Expedia flight tickets? The Expedia name change
+                        policy
+                        can help you do so.</p>
+                    <a href="#" class="btn-read">Read More</a>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="blog-card">
+                    <img src="assets/images/featured.png" alt="Blog 3">
+                    <p class="date">September 4, 2024</p>
+                    <h3 class="blog-title">Expedia Name Change Policy</h3>
+                    <p class="blog-text">Looking for a name change on Expedia flight tickets? The Expedia name change
+                        policy
+                        can help you do so.</p>
+                    <a href="#" class="btn-read">Read More</a>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="blog-card">
+                    <img src="assets/images/featured.png" alt="Blog 3">
+                    <p class="date">September 4, 2024</p>
+                    <h3 class="blog-title">Expedia Name Change Policy</h3>
+                    <p class="blog-text">Looking for a name change on Expedia flight tickets? The Expedia name change
+                        policy
+                        can help you do so.</p>
+                    <a href="#" class="btn-read">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== FEATURED SECTION ===== -->
+    <section class="flight-deals">
+        <div class="container">
+            <div class="row align-items-center mb-4">
+                <div class="col-md-6 mb-4">
+                    <p class="text-primary mb-1">Exclusive</p>
+                    <h2>Flight Deals</h2>
+                    <p class="subtitle">
+                        Save Up to 50% on Flights to USA, Canada and Mexico for FIFA World Cup 2026.
+                        Get Your Ticket to the FIFA World Cup 2026 at the Best Price!
+                    </p>
+                    <a href="#" class="deal-btn">Read More</a>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="deal-card">
+                        <img src="assets/images/exclusive.png" alt="Premium Economy">
+                        <div class="deal-info">
+                            <h5>Premium Economy Class</h5>
+                            <p>Call Today & get the best Flight Deal</p>
+                            <a href="#" class="deal-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="deal-card">
+                        <img src="assets/images/b1.png" alt="First Class">
+                        <div class="deal-info">
+                            <h5>First Class Flight</h5>
+                            <p>Call Today & get the best Flight Deal</p>
+                            <a href="#" class="deal-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="deal-card">
+                        <img src="assets/images/b1.png" alt="Business Class">
+                        <div class="deal-info">
+                            <h5>Business Class Flight</h5>
+                            <p>Call Today & get the best Flight Deal</p>
+                            <a href="#" class="deal-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="deal-card">
+                        <img src="assets/images/b1.png" alt="Economy Class">
+                        <div class="deal-info">
+                            <h5>Economy Class Flight</h5>
+                            <p>Call Today & get the best Flight Deal</p>
+                            <a href="#" class="deal-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+            </div>
+        </div>
+    </section>
+    <!-- ===== Package SECTION ===== -->
+    <section class="package-section">
+        <div class="container">
+            <div class="row">
+                <!-- Left Image -->
+                <div class="col-md-5">
+                    <div class="travel-img">
+                        <img src="assets/images/p1.png" alt="Travel" class="img-fluid rounded">
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="col-md-7 ps-md-5 destation-bg">
+                    <h6 class="text-primary">Packages</h6>
+                    <h3>Recommended Packages</h3>
+                    <p>Our vision of providing an easy and comfortable travel experience for explorers came to life in
+                        2004.
+                        We
+                        started with a strong idea and, over time, have become a trusted source for millions of
+                        travelers.
+                        Our
+                        site is a one-stop shop for like-minded adventurers.</p>
+
+                    <!-- Stats -->
+                    <div class="row stats mt-4">
+                        <div class="col-6">
+                            <h2>1000</h2><span>International Packages</span>
+                        </div>
+                        <div class="col-6">
+                            <h2>500+</h2><span>Domestic Packages</span>
+                        </div>
+                        <div class="col-6">
+                            <h2>800+</h2><span>Flight Packages</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- City Slider -->
+            <div class="city-slider mt-5">
+                <div class="city-card">
+                    <img src="assets/images/c1.png" alt="Delhi">
+                    <h5>New Delhi & NCR</h5>
+                    <p>12,786 accommodations</p>
+                </div>
+                <div class="city-card">
+                    <img src="assets/images/c1.png" alt="Bangalore">
+                    <h5>Bangalore</h5>
+                    <p>12,786 accommodations</p>
+                </div>
+                <div class="city-card">
+                    <img src="assets/images/c1.png" alt="Mumbai">
+                    <h5>Mumbai</h5>
+                    <p>12,786 accommodations</p>
+                </div>
+                <div class="city-card">
+                    <img src="assets/images/c1.png" alt="Hyderabad">
+                    <h5>Hyderabad</h5>
+                    <p>12,786 accommodations</p>
+                </div>
+                <div class="city-card">
+                    <img src="assets/images/c1.png" alt="Kolkata">
+                    <h5>Kolkata</h5>
+                    <p>12,786 accommodations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== FOOTER SECTION ===== -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer-logo">
+                            <img src="assets/images/logo.png" alt="FlightAura Logo">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-12 footer-col ">
+                        <h4>QUICK LINKS</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-sm-12 footer-col ">
+                        <h4>BEST FLIGHT DEALS</h4>
+                        <ul>
+                            <li><a href="#">Flight Booking</a></li>
+                            <li><a href="#">Hotels Booking</a></li>
+                            <li><a href="#">Car Rentals</a></li>
+                            <li><a href="#">Vacation Packages</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-sm-12 footer-col ">
+                        <h4>POLICY</h4>
+                        <ul>
+                            <li><a href="#">Cancellation Policy</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-sm-12 footer-col ">
+                        <h4>PACKAGES</h4>
+                        <ul>
+                            <li><a href="#">Cancellation Policy</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>© Copyrights 2025 FlightAura | All Rights Reserved</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Disclaimer</a> |
+                    <a href="#">Terms & Conditions</a> |
+                    <a href="#">Privacy & Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMenu = document.getElementById("close-menu");
+
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.add("active");
+        });
+        closeMenu.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+        });
+    </script>
+    <script>
+        document.querySelectorAll(".has-dropdown > a").forEach(menuLink => {
+            menuLink.addEventListener("click", e => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    const dropdown = menuLink.nextElementSibling;
+                    dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.blog-slider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2500,
+                prevArrow: '<button class="slick-prev"><img src="assets/images/arrow-left.svg"></button>',
+                nextArrow: '<button class="slick-next"><img src="assets/images/arrow.svg"></button>',
+                responsive: [
+                    {
+                        breakpoint: 992,
+                        settings: { slidesToShow: 4 }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: { slidesToShow: 1, arrows: false, }
+                    }
+                ]
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.city-slider').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                arrows: true,
+                dots: false,
+                prevArrow: '<button class="slick-prev"><img src="assets/images/arrow-left.svg"></button>',
+                nextArrow: '<button class="slick-next"><img src="assets/images/arrow.svg"></button>',
+                responsive: [
+                    { breakpoint: 992, settings: { slidesToShow: 3 } },
+                    { breakpoint: 768, settings: { slidesToShow: 2, arrows: false, } },
+                    { breakpoint: 576, settings: { slidesToShow: 1, arrows: false, } }
+                ]
+            });
+        });
+    </script>
+</body>
+
+</html>
